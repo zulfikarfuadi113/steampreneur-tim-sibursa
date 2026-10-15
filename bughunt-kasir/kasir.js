@@ -88,6 +88,10 @@ function hitungRingkasan(keranjang, member) {
 }
 
 function hitungKembalian(total, bayar) {
+  // PERBAIKAN BUG 4: Cek kecukupan pembayaran
+  if (bayar < total) {
+    throw new Error("Uang pembayaran kurang dari total belanja");
+  }
   return bayar - total;
 }
 
