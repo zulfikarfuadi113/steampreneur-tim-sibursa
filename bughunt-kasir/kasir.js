@@ -14,7 +14,7 @@ const MENU = [
   { kode: "K05", nama: "Jus Jeruk", harga: 8500 },
   { kode: "K06", nama: "Roti Bakar", harga: 10500 },
   { kode: "K07", nama: "Air Mineral", harga: 3500 },
-];
+];  
 
 function cariProduk(kode) {
   return MENU.find((p) => p.kode === kode);
@@ -28,15 +28,21 @@ function tambahItem(keranjang, kode, qty) {
     throw new Error("Produk tidak ditemukan");
   }
 
+  // PERBAIKAN BUG 1: Cegah jumlah pesanan <= 0
+  const nQty = parseInt(qty, 10);
+  if (isNaN(nQty) || nQty <= 0) {
+    throw new Error("Jumlah pesanan harus berupa bilangan bulat positif");
+  }
+
   const itemLama = keranjang.find((i) => i.kode === kode);
   if (itemLama) {
-    itemLama.qty += qty;
+    itemLama.qty += nQty;
   } else {
     keranjang.push({
       kode: produk.kode,
       nama: produk.nama,
       harga: produk.harga,
-      qty: qty,
+      qty: nQty,
     });
   }
   return keranjang;
