@@ -327,6 +327,38 @@ window.addEventListener("resize", () => {
     gambarCandlestick();
 });
 
+// Fungsi Ekspor Data Bursa ke File CSV
+function eksporCSV() {
+    if (!items || items.length === 0) {
+        alert("Tidak ada data barang untuk diekspor.");
+        return;
+    }
+
+    // Header kolom CSV
+    let csvContent = "ID,Nama Barang,Kategori,Harga Saat Ini (Rp),Jumlah Penawaran\n";
+
+    // Baris data barang
+    items.forEach((item) => {
+        const nama = `"${item.n}"`;
+        const kategori = `"${item.k}"`;
+        const jumlahPenawaran = item.c ? item.c.length : 0;
+        csvContent += `${item.id},${nama},${kategori},${item.h},${jumlahPenawaran}\n`;
+    });
+
+    // Buat file Blob dan picu unduhan di browser
+    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+
+    link.setAttribute("href", url);
+    link.setAttribute("download", "data-bursa-sibursa.csv");
+    link.style.visibility = "hidden";
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+
 // Initial Render
 gambarChip();
 gambarBaris();

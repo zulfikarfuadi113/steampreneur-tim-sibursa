@@ -35,6 +35,7 @@ Banyaknya seragam, buku pelajaran, dan barang/alat praktik yang menumpuk di ruma
 1. **Papan Pasar Real-time (Katalog & Rekap):** Menampilkan daftar barang/karya siswa lengkap dengan kategori, harga terkini, dan tren harga.
 2. **Formulir Penawaran/Lelang Ter-validasi:** Memungkinkan siswa mengajukan penawaran harga baru dengan pesan kesalahan yang jelas jika input kosong atau salah.
 3. **Grafik Pergerakan Candlestick:** Menampilkan riwayat dan dinamika penawaran harga secara real-time dalam bentuk chart lilin (Open, High, Low, Close).
+4. **Ekspor Data CSV (Change Request):** Mengunduh rekapitulasi daftar barang, kategori, dan harga papan bursa ke dalam file format `.csv`.
 
 ## 5. Di Luar Cakupan (Out of Scope)
 - Pembayaran online otomatis (Payment Gateway / Midtrans).

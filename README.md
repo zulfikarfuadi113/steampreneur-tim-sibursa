@@ -11,7 +11,7 @@
 - **Grafik Candlestick Real-Time (Canvas API):** Visualisasi pergerakan harga pasar dan tren penawaran menggunakan grafik lilin murni tanpa *library* eksternal.
 - **Penyimpanan Data Persisten (`localStorage`):** Data transaksi dan riwayat penawaran tersimpan otomatis di browser sehingga tidak hilang saat halaman di-refresh.
 - **Tampilan Dark/Light Mode & Responsif:** Desain modern berbasis Tailwind CSS yang nyaman diakses dari laptop maupun ponsel.
-
+-- **Ekspor Data CSV:** Mengunduh rekapitulasi data barang dan pergerakan harga bursa ke file format `.csv` untuk diolah lebih lanjut di Excel/Google Sheets.
 ---
 
 ## Teknologi yang Digunakan

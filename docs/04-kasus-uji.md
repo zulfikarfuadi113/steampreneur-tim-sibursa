@@ -10,6 +10,9 @@ Bagian B diisi setelah aplikasi diuji.
 | U03 | Di batas aturan (Tepat Rp1.000) | Pilih barang dengan harga awal Rp35.000, lalu ketik tawaran pas 1000 | Tawaran diterima, harga barang bertambah menjadi Rp36.000 (35000 + 1000) | Penawaran Rp1.000 berhasil dan harga barang bertambah menjadi Rp36.000 | Ya | u03-batas-aturan.png |
 | U04 | Perhitungan harga wajar (Normal) | Pilih barang dengan harga awal Rp85.000, lalu masukkan tawaran 15000 | Harga barang bertambah menjadi Rp100.000 (85000 + 15000) | Harga barang bertambah tepat menjadi Rp100.000 dan riwayat tercatat | Ya | u04-perhitungan-normal.png |
 | U05 | Penyimpanan data (LocalStorage) | Refresh halaman web (tekan F5) setelah pengujian U04 berhasil | Harga di tabel harusnya tetap Rp100.000, tidak kembali ke harga awal | Setelah halaman dimuat ulang (F5), harga barang tetap tersimpan Rp100.000 | Ya | u05-penyimpanan-localstorage.png |
+| U06 | Ketik kata kunci pada kolom pencarian (misal: "buku") | Tabel papan bursa hanya menampilkan daftar barang yang mengandung kata kunci "buku" | Pencarian berfungsi real-time dan menyaring tabel dengan tepat | Ya | u07-pencarian-bursa.png |
+| U07 | Klik tombol filter kategori (misal: "Elektronik") | Tabel papan bursa hanya menampilkan daftar barang dengan kategori "Elektronik" | Filter kategori berhasil menyaring barang sesuai kategori yang dipilih | Ya | u08-filter-kategori.png |
+| U08 | Klik tombol "Ekspor CSV" | Browser mengunduh file `data-bursa-sibursa.csv` berisi rekapitulasi data barang | File CSV berhasil diunduh dan dapat dibuka di Microsoft Excel / Google Sheets | Ya | u09-ekspor-csv.png |
 
 Wajib ada:
 - minimal satu kasus dengan **input yang salah** (kosong, negatif, huruf di kolom angka),
