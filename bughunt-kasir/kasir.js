@@ -29,7 +29,7 @@ function tambahItem(keranjang, kode, qty) {
   }
 
   // PERBAIKAN BUG 1: Cegah jumlah pesanan <= 0
-  const nQty = parseInt(qty, 10);
+  const nQty =  parseInt(qty, 10);
   if (isNaN(nQty) || nQty <= 0) {
     throw new Error("Jumlah pesanan harus berupa bilangan bulat positif");
   }
