@@ -92,6 +92,52 @@
             </div>
         </section>
 
+        <!-- Section Papan Bursa & Ticker (HALAMAN REKAP/DAFTAR) -->
+        <section id="papan" class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+                <div>
+                    <h2 class="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">Papan Pasar Real-time (Rekap Data)</h2>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">Pilih barang untuk melihat grafik candlestick dan mengajukan penawaran.</p>
+                </div>
+                <!-- Search & Filters & Reset -->
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <div class="relative">
+                        <svg class="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                        <input type="search" id="cari" placeholder="Cari barang atau karya..." class="w-full sm:w-64 pl-10 pr-4 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all">
+                    </div>
+                    <!-- TOMBOL RESET DATA UNTUK PENGUJIAN -->
+                    <button type="button" onclick="resetDataBursa()" class="px-4 py-2 rounded-xl bg-rose-50 dark:bg-rose-900/30 text-rose-600 dark:text-rose-400 border border-rose-200 dark:border-rose-800/50 text-sm font-semibold hover:bg-rose-100 dark:hover:bg-rose-900/50 transition-all" title="Kembalikan data ke awal">
+                        Reset Data
+                    </button>
+                </div>
+            </div>
+
+            <!-- Chips Filter Kategori -->
+            <div class="flex items-center gap-2 overflow-x-auto pb-4 mb-6 scrollbar-none" id="chips"></div>
+
+            <!-- Tabel Bursa Minimalis -->
+            <div class="bg-white dark:bg-slate-900/80 rounded-2xl border border-slate-200/80 dark:border-slate-800/80 overflow-hidden shadow-sm">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-sm">
+                        <thead class="bg-slate-50 dark:bg-slate-800/50 text-slate-500 dark:text-slate-400 font-semibold border-b border-slate-200 dark:border-slate-800">
+                            <tr>
+                                <th class="py-3.5 px-4 sm:px-6">Nama Barang / Karya</th>
+                                <th class="py-3.5 px-4">Kategori</th>
+                                <th class="py-3.5 px-4 text-right">Harga Saat Ini</th>
+                                <th class="py-3.5 px-4 text-right">Tren 24j</th>
+                                <th class="py-3.5 px-4 text-center">Grafik Lilin (Candle)</th>
+                                <th class="py-3.5 px-4 sm:px-6 text-right">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="isi" class="divide-y divide-slate-100 dark:divide-slate-800/60 font-medium"></tbody>
+                    </table>
+                </div>
+                <div id="kosong" class="hidden p-12 text-center text-slate-400">
+                    <p class="text-base font-semibold">Tidak ada barang yang ditemukan.</p>
+                    <p class="text-xs mt-1">Coba kata kunci lain atau reset filter kategori.</p>
+                </div>
+            </div>
+        </section>
 
         <!-- Section Cara Kerja -->
         <section id="cara" class="py-16 border-t border-slate-200/60 dark:border-slate-800/60 bg-white dark:bg-slate-900/40">
