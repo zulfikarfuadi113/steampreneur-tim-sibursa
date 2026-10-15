@@ -230,6 +230,64 @@
         </div>
     </footer>
 
+    <!-- MODAL TAWAR & CANDLESTICK CHART -->
+    <dialog id="dlg" class="bg-transparent backdrop:bg-slate-900/60 backdrop:backdrop-blur-sm p-4 w-full max-w-2xl rounded-3xl outline-none">
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-2xl text-slate-800 dark:text-slate-100 relative max-h-[90vh] overflow-y-auto">
+            <button type="button" id="dlg-tutup" class="absolute top-5 right-5 p-2 rounded-xl text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+
+            <!-- Header Modal -->
+            <div class="mb-4">
+                <span id="dlg-kategori" class="text-xs font-bold uppercase tracking-wider text-brand-600 dark:text-brand-400">Kategori</span>
+                <h3 id="dlg-judul" class="text-2xl font-extrabold text-slate-900 dark:text-white mt-0.5">Nama Barang</h3>
+            </div>
+
+            <!-- Stats summary & Price -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 p-3.5 bg-slate-50 dark:bg-slate-800/50 rounded-2xl mb-5 text-xs">
+                <div><span class="text-slate-400 block">Harga Terakhir</span><span id="dlg-harga" class="text-base font-extrabold font-mono text-slate-900 dark:text-white">Rp0</span></div>
+                <div><span class="text-slate-400 block">Tertinggi (High)</span><span id="dlg-high" class="text-sm font-bold font-mono text-bull">Rp0</span></div>
+                <div><span class="text-slate-400 block">Terendah (Low)</span><span id="dlg-low" class="text-sm font-bold font-mono text-bear">Rp0</span></div>
+                <div><span class="text-slate-400 block">Volume Tawar</span><span id="dlg-vol" class="text-sm font-bold font-mono text-slate-700 dark:text-slate-300">0x</span></div>
+            </div>
+
+            <!-- AREA GRAFIK CANDLESTICK -->
+            <div class="mb-6">
+                <div class="flex items-center justify-between mb-2">
+                    <div class="flex items-center gap-2">
+                        <span class="text-xs font-bold text-slate-700 dark:text-slate-300">Grafik Pergerakan Candlestick</span>
+                        <span class="inline-flex items-center gap-1 text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-600 font-semibold">● Real-time</span>
+                    </div>
+                </div>
+                <div class="relative w-full h-56 bg-slate-900 rounded-2xl p-3 overflow-hidden border border-slate-800 shadow-inner">
+                    <canvas id="candleCanvas" class="w-full h-full block"></canvas>
+                </div>
+            </div>
+
+            <!-- Form Tawaran -->
+            <div class="border-t border-slate-200 dark:border-slate-800 pt-4">
+                <label for="dlg-input" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-2">Masukkan Nominal Penawaran Baru (Rp)</label>
+                <div class="flex gap-2">
+                    <input type="number" id="dlg-input" min="1000" step="1000" placeholder="contoh: 25000" class="flex-grow px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-brand-500">
+                    <button type="button" id="dlg-kirim" class="px-5 py-2.5 bg-brand-600 hover:bg-brand-500 text-white font-bold text-sm rounded-xl transition-all shadow-md shadow-brand-500/20 whitespace-nowrap">
+                        Ajukan Tawar
+                    </button>
+                </div>
+                <p id="dlg-err" class="text-xs text-rose-500 font-semibold mt-1.5 min-h-[1.25rem]"></p>
+            </div>
+
+            <!-- Riwayat Penawaran List -->
+            <div class="mt-4">
+                <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Riwayat Penawaran Terakhir</h4>
+                <ul id="dlg-log" class="space-y-1.5 max-h-32 overflow-y-auto text-xs font-mono pr-1"></ul>
+            </div>
+        </div>
+    </dialog>
+
+    <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-xs font-bold px-5 py-3 rounded-xl shadow-2xl opacity-0 pointer-events-none transition-all duration-300 z-50">
+        Notifikasi SIBURSA
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
