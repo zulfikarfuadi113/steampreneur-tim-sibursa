@@ -5,11 +5,11 @@ Bagian B diisi setelah aplikasi diuji.
 
 | ID | Kriteria yang diuji | Langkah / input | Hasil yang diharapkan | Hasil sebenarnya | Lulus? | Bukti (nama file tangkapan layar) |
 |---|---|---|---|---|---|---|
-| U01 | Input yang salah (Kosong) | Tidak mengisi angka apa-apa di form, lalu klik tombol "Ajukan Tawar" | Sistem menolak proses dan memunculkan tulisan peringatan error | - | - | - |
-| U02 | Input yang salah (Di bawah batas) | Memasukkan angka 500 di kolom nominal penawaran | Ditolak karena minimal Rp1.000, muncul pesan error | - | - | - |
-| U03 | Di batas aturan (Tepat Rp1.000) | Pilih barang dengan harga awal Rp35.000, lalu ketik tawaran pas 1000 | Tawaran diterima, harga barang bertambah menjadi Rp36.000 (35000 + 1000) | - | - | - |
-| U04 | Perhitungan harga wajar (Normal) | Pilih barang dengan harga awal Rp85.000, lalu masukkan tawaran 15000 | Harga barang bertambah menjadi Rp100.000 (85000 + 15000) | - | - | - |
-| U05 | Penyimpanan data (LocalStorage) | Refresh halaman web (tekan F5) setelah pengujian U04 berhasil | Harga di tabel harusnya tetap Rp100.000, tidak kembali ke harga awal | - | - | - |
+| U01 | Input yang salah (Kosong) | Tidak mengisi angka apa-apa di form, lalu klik tombol "Ajukan Tawar" | Sistem menolak proses dan memunculkan tulisan peringatan error | Pesan error "Masukkan penawaran minimal Rp1.000." muncul dan input ditolak | Ya | u01-form-kosong.png |
+| U02 | Input yang salah (Di bawah batas) | Memasukkan angka 500 di kolom nominal penawaran | Ditolak karena minimal Rp1.000, muncul pesan error | Pesan error muncul dan tombol tawar tidak memproses angka 500 | Ya | u02-di-bawah-batas.png |
+| U03 | Di batas aturan (Tepat Rp1.000) | Pilih barang dengan harga awal Rp35.000, lalu ketik tawaran pas 1000 | Tawaran diterima, harga barang bertambah menjadi Rp36.000 (35000 + 1000) | Penawaran Rp1.000 berhasil dan harga barang bertambah menjadi Rp36.000 | Ya | u03-batas-aturan.png |
+| U04 | Perhitungan harga wajar (Normal) | Pilih barang dengan harga awal Rp85.000, lalu masukkan tawaran 15000 | Harga barang bertambah menjadi Rp100.000 (85000 + 15000) | Harga barang bertambah tepat menjadi Rp100.000 dan riwayat tercatat | Ya | u04-perhitungan-normal.png |
+| U05 | Penyimpanan data (LocalStorage) | Refresh halaman web (tekan F5) setelah pengujian U04 berhasil | Harga di tabel harusnya tetap Rp100.000, tidak kembali ke harga awal | Setelah halaman dimuat ulang (F5), harga barang tetap tersimpan Rp100.000 | Ya | u05-penyimpanan-localstorage.png |
 
 Wajib ada:
 - minimal satu kasus dengan **input yang salah** (kosong, negatif, huruf di kolom angka),
