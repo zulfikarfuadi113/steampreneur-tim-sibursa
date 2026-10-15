@@ -63,7 +63,8 @@ function hitungSubtotal(keranjang) {
 // Diskon belanja dan diskon member.
 function hitungDiskon(subtotal, member) {
   let diskon = 0;
-  if (subtotal > 100000) {
+  // PERBAIKAN BUG 3: Ubah > 100000 menjadi >= 100000 (minimal Rp100.000)
+  if (subtotal >= 100000) {
     diskon += (subtotal * 5) / 100;
   }
   if (member) {
